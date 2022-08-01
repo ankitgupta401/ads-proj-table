@@ -1,0 +1,21 @@
+<div id="__next">
+    <div class="Home_container__bCOhY">
+   
+      <div class="headline-wrapper container">
+        <h2>Select Blocks for your advertisement</h2>
+      </div>
+      <div style="overflow: hidden" class="grid-list-wrapper d-block">
+        <table cellPadding="0" cellSpacing="0" class="w-100">
+          <tbody style="overflow: hidden">
+            <tr *ngFor="let i of rows">
+                <td  *ngFor="let j of cols" [class]="'box-95' + (cols[j] === 1 ? 'active': '') "> </td>
+            </tr>
+            
+            
+            
+          </tbody>
+        </table>
+      </div>
+      <div class="stepper-wrapper container"><button class="next_btn">NEXT</button></div>
+    </div>
+  </div>
