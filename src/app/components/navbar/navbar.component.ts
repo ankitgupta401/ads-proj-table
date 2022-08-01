@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,8 +7,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
+  @ViewChild('toggleButton') toggleButton: ElementRef | any;
+  @ViewChild('menu') menu: ElementRef | any;
+  
 
-  constructor() { }
+  constructor(private router:Router,
+              private renderer:Renderer2) { 
+
+//     this.renderer.listen('window', 'click',(e:Event)=>{
+//       if(e.target !== this.toggleButton.nativeElement && e.target!==this.menu.nativeElement){
+//         this.onShow=false;
+        
+//       }console.log(e)
+      
+//  });
+  }
+  
   loggedId=false;
   onShow=false;
   ngOnInit(): void {
@@ -21,6 +36,23 @@ export class NavbarComponent implements OnInit {
   }
   toggleShow(){
     this.onShow =!this.onShow
+  }
+  goToCart()
+  {
+    this.router.navigate(['/create-ads'])
+  }
+  goToHome()
+  {
+    this.router.navigate(['/'])
+  }
+  goToAds()
+  {
+    this.router.navigate(['/create-ads'])
+    this.onShow=false;
+  }
+  onSignOut()
+  {
+    this.loggedId=false
   }
 
 }

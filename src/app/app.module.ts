@@ -8,6 +8,8 @@ import { CartComponent } from './cart/cart.component';
 import { SelectPageComponent } from './select-page/select-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    RouterModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -11,7 +11,7 @@ const routes: Routes = [
   
   },
   {
-    path: 'cart',
+    path: 'cart/:count',
     component: CartComponent
   },
   {

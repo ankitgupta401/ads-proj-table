@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-select-page',
@@ -21,10 +22,29 @@ export class SelectPageComponent implements OnInit {
     [0,0,0,0,0,0,0,0,0,0],
 ]
   count=0;
-  constructor() { }
+
+  constructor(private router:Router) { }
 
 
   ngOnInit(): void {
+  }
+  selectBlock(i:any,j:any){
+    if(this.mat[i][j]===1)
+    {
+      this.mat[i][j]=0;
+      this.count--;
+    }
+    else{
+      this.mat[i][j]=1;
+      this.count++;
+
+    }
+    
+    
+  }
+  goToCheckout()
+  {
+    this.router.navigate(['/cart',this.count])
   }
 
 }
