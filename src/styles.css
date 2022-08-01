@@ -16,8 +16,8 @@ a {
 .Home_container__bCOhY {
   padding: 0 !important;
   background-image: linear-gradient(#f2f2f2, #f2f2f2);
-  /* height: 100vh;
-  height: 100vw; */
+  height: 100vh;
+  height: 100vw;
 }
 @media (prefers-color-scheme: dark) {
   html {
@@ -68,6 +68,51 @@ a {
   border: 0;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) {
+  tbody {
+    overflow-x: scroll;
+  }
+  .grid-list-wrapper .box-95 {
+    height: 65px !important;
+    width: 64px !important;
+  }
+}
+@media screen and (min-device-width: 1400px) and (max-device-width: 1450px) {
+  .grid-list-wrapper .box-95 {
+    height: 70px !important;
+    width: 70px !important;
+  }
+}
+@media screen and (min-device-width: 1450px) and (max-device-width: 1599px) {
+  .grid-list-wrapper .box-95 {
+    height: 76px !important;
+    width: 80px !important;
+  }
+}
+@media screen and (min-device-width: 1600px) and (max-device-width: 1700px) {
+  .grid-list-wrapper .box-95 {
+    height: 84px !important;
+    width: 80px !important;
+  }
+}
+@media screen and (min-device-width: 1700px) and (max-device-width: 1800px) {
+  .grid-list-wrapper .box-95 {
+    height: 90px !important;
+    width: 90px !important;
+  }
+}
+@media screen and (min-device-width: 2100px) and (max-device-width: 2220px) {
+  .grid-list-wrapper .box-95 {
+    height: 105px !important;
+    width: 105px !important;
+  }
+}
+@media screen and (min-device-width: 2500px) and (max-device-width: 2560px) {
+  .grid-list-wrapper .box-95 {
+    height: 133px !important;
+    width: 133px !important;
+  }
 }
 .header-wrapper .container .search-wrapper .btn-search {
   height: 38px;
@@ -296,11 +341,12 @@ a {
   display: flex;
   max-width: 100%;
   position: absolute;
+  margin: 2px;
 }
 .grid-list-wrapper .box-95 {
   margin: 0 5px;
-  height: 65px;
-  min-width: 64px;
+  height: 95px;
+  width: 95px;
   border: 1px solid #e7e7e7;
   background-color: #fff;
   box-shadow: 3px 0 5px rgba(0, 0, 0, 0.24);
@@ -561,7 +607,7 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: #edf2f7;
+  background-color: var(--bs-body-bg);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
@@ -2613,7 +2659,6 @@ textarea.form-control-lg {
   -moz-appearance: none;
   appearance: none;
   -webkit-print-color-adjust: exact;
-  color-adjust: exact;
   print-color-adjust: exact;
 }
 .form-check-input[type="checkbox"] {
