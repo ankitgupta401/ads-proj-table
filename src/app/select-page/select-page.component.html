@@ -8,7 +8,7 @@
         <table cellPadding="0" cellSpacing="0" class="w-100">
           <tbody style="overflow: hidden">
             <tr *ngFor="let i of rows">
-                <td  *ngFor="let j of cols" [class]="'box-95' + (cols[j] === 1 ? 'active': '') "> </td>
+                <td  *ngFor="let j of cols" [class]="'box-95' + (mat[i][j] === 1 ? 'active': '') "> </td>
             </tr>
             
             
