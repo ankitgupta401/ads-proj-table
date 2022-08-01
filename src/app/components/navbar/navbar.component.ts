@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
   
   loggedId=false;
   onShow=false;
+  showInvalidCred =false
   ngOnInit(): void {
   }
 
@@ -32,6 +33,10 @@ export class NavbarComponent implements OnInit {
     let {emailId, password}= form.value
     if( emailId === 'test@gmail.com' && password === '1234'){
       this.loggedId=true;
+      this.onShow=false
+      this.showInvalidCred = false;
+    }else {
+      this.showInvalidCred = true;
     }
   }
   toggleShow(){
@@ -53,6 +58,7 @@ export class NavbarComponent implements OnInit {
   onSignOut()
   {
     this.loggedId=false
+    this.onShow=false
   }
 
 }

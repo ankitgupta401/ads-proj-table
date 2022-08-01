@@ -29,6 +29,9 @@ export class SelectPageComponent implements OnInit {
   ngOnInit(): void {
   }
   selectBlock(i:any,j:any){
+    if(this.count === 10){
+      return
+    }
     if(this.mat[i][j]===1)
     {
       this.mat[i][j]=0;

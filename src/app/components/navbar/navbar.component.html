@@ -4,7 +4,7 @@
         <option>Delhi</option><option>Mumbai</option><option>Pune</option></select>
         <input type="text" placeholder="Search for area, street name..."/></div>
         <div class="icons-wrapper">
-            <div class="cart-icon me-4" (click)="goToCart()">
+            <div class="cart-icon me-4" *ngIf="loggedId" (click)="goToCart()">
                 <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
                     <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
                     <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"/>
@@ -12,13 +12,20 @@
                 <img src="/assets/media/cart.56c8221d.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/>
                 <noscript><img srcSet="/assets/media/cart.56c8221d.svg 1x, /assets/media/cart.56c8221d.svg 2x" src="/assets/media/cart.56c8221d.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" loading="lazy"/></noscript>
             </span></div>
-            <div (click)="toggleShow()"  class="profile-icon">
+            <div *ngIf="!loggedId" (click)="toggleShow()"  class="profile-icon">
                 <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
                     <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"/></span>
                     <img #toggleButton src="./assets/media/login.1c8ce0ae.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/><noscript>
                         <img srcSet="/assets/media/login.1c8ce0ae.svg 1x, /assets/media/login.1c8ce0ae.svg 2x" src="/assets/media/login.1c8ce0ae.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" loading="lazy"/></noscript>
                     </span>
                 </div>
+                <div *ngIf="loggedId"  (click)="toggleShow()"  class="profile-icon">
+                    <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                        <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"/></span>
+                        <img #toggleButton src="./assets/media/user.8b1c1ab6.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/><noscript>
+                            <img srcSet="/assets/media/login.1c8ce0ae.svg 1x, /assets/media/login.1c8ce0ae.svg 2x" src="/assets/media/login.1c8ce0ae.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" loading="lazy"/></noscript>
+                        </span>
+                    </div>
             </div>
         </div>
     </div>
@@ -28,8 +35,11 @@
 
 
 
-    <div *ngIf="!loggedId && onShow" #menu class="nav-sign-in-box"><div class="login-wrapper"><form  #form="ngForm" (ngSubmit)="login(form)"><div class="s_input-wrapper ">
-        <label class="text-label">Email<span class="required-field"> *</span></label><input type="email" class="text-input" autocomplete="on" name="emailId" ngModel></div><div class="s_input-wrapper my-3"><div class="d-flex justify-content-between">
+    <div *ngIf="!loggedId && onShow" #menu class="nav-sign-in-box"><div class="login-wrapper"><form  #form="ngForm" (ngSubmit)="login(form)">
+        <div class="s_input-wrapper ">
+            <label *ngIf="showInvalidCred" style="color: red;">Invalid Credentials</label><br/>
+        <label class="text-label">Email<span class="required-field"> *</span></label>
+        <input type="email" class="text-input" autocomplete="on" name="emailId" ngModel></div><div class="s_input-wrapper my-3"><div class="d-flex justify-content-between">
             <label class="text-label">Password<span class="required-field"> *</span></label><label class="text-label-forgot">Forgot?</label></div><input name="password" ngModel type="password" autocomplete="new-password" class="text-input" value="1234">
         </div><div class="s_input-wrapper my-3 d-flex align-items-center">
             <input type="checkbox">
