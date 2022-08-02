@@ -64,7 +64,7 @@ export class SelectPageComponent implements OnInit {
   }
   goToCheckout()
   {
-    this.router.navigate(['/cart',this.count])
+    this.router.navigate(['/cart'])
   }
 
 }
