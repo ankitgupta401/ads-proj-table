@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { RegisterComponent } from './register/register.component';
 import { SelectPageComponent } from './select-page/select-page.component';
 
 const routes: Routes = [
@@ -17,6 +18,10 @@ const routes: Routes = [
   {
     path: 'create-ads',
     component: SelectPageComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 

@@ -37,7 +37,7 @@ export class CartComponent implements OnInit,OnDestroy {
   checkout(form:any){
     Swal.fire('Purchase Complete','Thank you for your purchase','success').then(()=>
       {
-        this.commonService.setBlocksInCart(0);
+        this.commonService.setBlocksInCart(0,0,0);
          this.router.navigate(['/'])
       })
     

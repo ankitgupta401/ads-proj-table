@@ -9,6 +9,8 @@ import { SelectPageComponent } from './select-page/select-page.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import { RegisterComponent } from './register/register.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,14 +19,15 @@ import { RouterModule, Routes } from '@angular/router';
     HomePageComponent,
     CartComponent,
     SelectPageComponent,
-    NavbarComponent
+    NavbarComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

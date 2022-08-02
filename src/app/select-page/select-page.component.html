@@ -4,23 +4,56 @@
       <div class="headline-wrapper container">
         <h2>Select Blocks for your advertisement</h2>
       </div>
-      <div style="overflow: hidden" class="grid-list-wrapper d-block">
-        <table cellPadding="0" cellSpacing="0" class="w-100">
-          <tbody style="overflow: hidden">
-            <tr *ngFor="let i of rows ; let in =index">
-            
-                <td (click)="selectBlock(in,jn)" *ngFor="let j of cols ;let jn =index" [class]="'box-95' + (mat[in][jn] === 1 ? ' active': '') "> </td>
-            </tr>
-            
-            
-            
-          </tbody>
-        </table>
+      <div>
+        <div style="padding: 30px;" class="row">
+          <div class="col-md-4">
+        <label> No Of Blocks</label>
+        <select (ngModelChange)="onChangeBlocks($event)" name="noOfBlocks" [ngModel]="1" class="form-select" aria-label="Default select example">
+          <!-- <option selected></option> -->
+          <option selected value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
       </div>
+      <div class="col-md-4">
+        <label> Layout</label>
+        <select (ngModelChange)="changeLayout($event)" name="layout" [ngModel]="1" class="form-select" aria-label="Default select example">
+          <!-- <option selected></option> -->
+          <option selected value="1">Horizontal</option>
+          <option value="2">Vertical</option>
+          <option value="3">Mixed</option>
+         
+        </select>
+      </div>
+      </div>
+      </div>
+      <div style="padding-left: 20px;" class="row">
+      <div   *ngFor="let i of mat ; let in =index"  class="col-md-5">
+        <div style="overflow: hidden" class="grid-list-wrapper d-block">
+          <table cellPadding="0" cellSpacing="0" class="w-100">
+            <tbody style="overflow: hidden">
+              <tr *ngFor="let i of mat[in];let jn =index">
+              
+                  <td  *ngFor="let j of mat[in][jn];" [class]="'box-95' + (mat[in][jn] === 1 ? ' active': '') "> </td>
+                
+                  
+                </tr>
+                <tr >
+
+                  <div  > <br/><button class="btn btn-primary" (click)="selectBlock(in)" type="button">Select</button></div>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
    
     </div>
   </div>
-  <div class="row">
-    <br/>
-  <div class="stepper-wrapper container"><button class="next_btn" (click)="goToCheckout()" type="button" [disabled]="count<=0">NEXT</button></div>
-</div>
