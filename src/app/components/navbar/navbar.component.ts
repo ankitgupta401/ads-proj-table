@@ -64,6 +64,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   }
   goToCart()
   {
+    if(!this.loggedId){
+      this.toggleShow()
+      return;
+    }
     if(this.count > 0){
       this.router.navigate(['/cart'])
     }else {
