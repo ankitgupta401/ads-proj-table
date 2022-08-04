@@ -1,4 +1,4 @@
-<div style="margin-bottom :120px" class="row" id="__next">
+<div style="margin-bottom :120px; padding-left: 20px;" class="row" id="__next">
     <div class="Home_container__bCOhY">
    
       <div class="headline-wrapper container">
@@ -35,23 +35,25 @@
       </div>
       </div>
       <div style="padding-left: 20px;" class="row">
-      <div   *ngFor="let i of mat ; let in =index"  class="col-md-5">
-        <div style="overflow: hidden" class="grid-list-wrapper d-block">
+      <div style="padding-bottom: 20px;"   [class]=" count === 10 ? '':  'col-md-6'" *ngFor="let i of mat ; let in =index"  >
+
+        <div class="row" *ngFor="let i of mat[in];let jn =index">
+              
+          <div  *ngFor="let j of mat[in][jn];" [class]="'box-95' + (mat[in][jn] === 1 ? ' active': '') "> </div>
+        
+          
+        </div>
+        <div >
+
+          <div  > <br/><button class="btn btn-primary" (click)="selectBlock(in)" type="button">Select</button></div>
+        </div>
+        <!-- <div style="overflow: hidden" class="grid-list-wrapper d-block">
           <table cellPadding="0" cellSpacing="0" class="w-100">
             <tbody style="overflow: hidden">
-              <tr *ngFor="let i of mat[in];let jn =index">
-              
-                  <td  *ngFor="let j of mat[in][jn];" [class]="'box-95' + (mat[in][jn] === 1 ? ' active': '') "> </td>
-                
-                  
-                </tr>
-                <tr >
-
-                  <div  > <br/><button class="btn btn-primary" (click)="selectBlock(in)" type="button">Select</button></div>
-                </tr>
+            
             </tbody>
           </table>
-        </div>
+        </div> -->
       </div>
     </div>
    

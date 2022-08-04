@@ -54,10 +54,16 @@ export class SelectPageComponent implements OnInit {
     }else {
 
       this.mat = Object.keys(this.layouts[noOfBlocks]).map(val => this.layouts[noOfBlocks][val]);
-     if(noOfBlocks !== 1){
-      this.mat.splice(0,2);
+      if(this.mat.length  >= 3){
+        let tempFirst = this.mat[0];
+        this.mat.splice(0,1);
+        this.mat.push(tempFirst);
+        this.mat =this.mat.reverse();
+      }
+    //  if(noOfBlocks !== 1){
+    //   this.mat.splice(0,2);
      
-     }
+    //  }
    
     }
     console.log(this.mat);

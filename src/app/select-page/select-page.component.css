@@ -1,0 +1,12 @@
+body {
+  overflow-y: hidden;
+}
+
+.box-95 {
+  height: 64px;
+  width: 65px;
+  background-color: #fff;
+  box-shadow: 3px 0 5px rgb(0 0 0 / 24%);
+  cursor: pointer;
+  margin: 2px 2px;
+}
