@@ -80,10 +80,10 @@
                 </label>
             </li>
             <div class="items">
-                <li (click)="goToCart()"><a href="#home">BUY</a></li>
-                <li *ngIf="!loggedId" (click)="toggleShow()" ><a   href="#">LOGIN</a></li>
+                <li (click)="goToCart()"><a  style="cursor: pointer;" >BUY</a></li>
+                <li *ngIf="!loggedId" (click)="toggleShow()" ><a  style="cursor: pointer;">LOGIN</a></li>
                
-                <li *ngIf="loggedId" (click)="toggleShow()" ><a   href="#">Profile</a></li>
+                <li *ngIf="loggedId" (click)="toggleShow()" ><a  style="cursor: pointer;">Profile</a></li>
             </div>
 
         </ul>
