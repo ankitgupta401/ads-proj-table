@@ -10,7 +10,7 @@ import { AuthService } from '../auth.service';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor(private auth:AuthService, ) { }
+  constructor(private auth:AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -25,5 +25,9 @@ export class RegisterComponent implements OnInit {
         Swal.fire('An Error Occured',res.message,'error')
       }
     })
+  }
+
+  gotoLogin(){
+    this.router.navigate(['/login'])
   }
 }

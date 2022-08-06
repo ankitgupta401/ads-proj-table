@@ -14,12 +14,15 @@ export class AppComponent implements OnInit {
   constructor(private commonService: CommonServiceService, private auth:AuthService){
     let locUser:string =localStorage.getItem('user') || '{}'
     this.user = JSON.parse(locUser);
-    if(this.user.emailId){
-      this.loggedIn =true;
-    }
+    
     this.auth.loggedInSubscription().subscribe((res:any) => {
       this.loggedIn = res;
     })
+
+    if(this.user.emailId){
+      this.loggedIn =true;
+    }
+    console.log(this.user)
 
    
   }

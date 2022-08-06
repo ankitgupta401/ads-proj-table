@@ -113,4 +113,8 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.router.navigate(['/register'])
     this.onShow=false
   }
+
+  goToLogin(){
+    this.router.navigate(['/login'])
+  }
 }
