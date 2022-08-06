@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   @ViewChild('menu') menu: ElementRef | any;
 
   @Input() loggedId: any=false;
-  user:any ;
+  @Input() user:any;
 
   constructor(private router:Router,
               private renderer:Renderer2, private commonService:CommonServiceService, private auth: AuthService) { 
@@ -46,36 +46,21 @@ export class NavbarComponent implements OnInit, OnDestroy {
     })
     this.count= this.commonService.getBlocksInCartValue();
   
+    this.auth.loggedInSubscription().subscribe((res:any) => {
+      this.loggedId = res;
+      let locUser:string =localStorage.getItem('user') || '{}'
+      this.user = JSON.parse(locUser);
+
+    })
+    if(this.user.email){
+      this.loggedId =true;
+    }
+
   }
   ngOnDestroy(): void {
     this.blocksSub.unsubscribe();
   }
 
-  login(form:any){
-    // let {emailId, password}= form.value;
-    let {emailId, password}= form.value
-    if( emailId === 'test@gmail.com' && password === '1234'){
-      this.loggedId=true;
-      this.onShow=false
-      this.showInvalidCred = false;
-      localStorage.setItem('user', JSON.stringify({emailId, password}))
-    }else {
-      this.showInvalidCred = true;
-    }
-    // this.auth.login({...form.value}).subscribe((res:any)=> {
-    //   if(res.status){
-    //     this.loggedId=true;
-    //     this.onShow=false
-    //     this.showInvalidCred = false;
-    //     this.user= res.data;
-    //     localStorage.setItem('user', JSON.stringify(res.data))
-    //     localStorage.setItem('token', JSON.stringify(res.data.token))
-    //       this.auth.setLoggedIn();
-    //   }else {
-    //     Swal.fire('An Error Occured',res.message,'error')
-    //   }
-    // })
-  }
   toggleShow(){
     this.onShow =!this.onShow
   }

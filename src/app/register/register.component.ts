@@ -17,10 +17,11 @@ export class RegisterComponent implements OnInit {
 
   register(form:any){
     this.auth.register({...form.value}).subscribe((res:any)=> {
-      if(res.status){
-          localStorage.setItem('user', JSON.stringify(res.data))
-          localStorage.setItem('token', JSON.stringify(res.data.token))
+      if(res.email){
+          localStorage.setItem('user', JSON.stringify(res))
+          // localStorage.setItem('token', JSON.stringify(res.data.token))
           this.auth.setLoggedIn();
+          this.router.navigate(['/create-ads'])
       }else {
         Swal.fire('An Error Occured',res.message,'error')
       }

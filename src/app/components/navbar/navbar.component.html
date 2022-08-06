@@ -92,8 +92,8 @@
 
 <div *ngIf="loggedId &&onShow  "#menu class="profile-content-wrapper">
     <div class="user d-flex flex-column align-items-start">
-        <div class="text-username">John Kido</div>
-        <div class="text-email">test@gmail.com</div>
+        <div class="text-username">{{user.name}}</div>
+        <div class="text-email">{{user.email}}</div>
     </div>
     <div class="content">
         <div class="content-wrapper cursor-pointer" (click)="goToAds()">

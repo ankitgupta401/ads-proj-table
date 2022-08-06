@@ -1,18 +1,18 @@
 <div class="container2">
   <div class="form-area">
-      <form action="#">
+      <form  #form="ngForm" (ngSubmit)="register(form)">
           <div class="title">
               <span>Register</span>
           </div>
-          <input type="text" placeholder="Name"><br>
-          <input type="text" placeholder="Email"><br>
-          <input type="text" placeholder="Phone"><br>
-          <input type="password" placeholder="Password">
+          <input name="name" ngModel type="text" placeholder="Name"><br>
+          <input name="email" ngModel type="text" placeholder="Email"><br>
+          <input name="phone" ngModel type="text" placeholder="Phone"><br>
+          <input name="password" ngModel type="password" placeholder="Password">
           <!-- <div class="fpass">
               <a href="#">Forgot Password</a>
           </div> -->
 
-          <button class="register">Register</button>
+          <button type="submit"  class="register">Register</button>
           <button type="button" (click)="gotoLogin()" class="login">Login</button><br>
 
       </form>

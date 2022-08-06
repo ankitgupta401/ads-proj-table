@@ -17,9 +17,12 @@ export class AppComponent implements OnInit {
     
     this.auth.loggedInSubscription().subscribe((res:any) => {
       this.loggedIn = res;
+      let locUser:string =localStorage.getItem('user') || '{}'
+      this.user = JSON.parse(locUser);
+    console.log(res, this.user);
     })
 
-    if(this.user.emailId){
+    if(this.user.email){
       this.loggedIn =true;
     }
     console.log(this.user)
@@ -27,6 +30,7 @@ export class AppComponent implements OnInit {
    
   }
   ngOnInit(): void {
+
   //  this.commonService.setBlocksInCart(0)
   }
 
