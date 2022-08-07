@@ -159,9 +159,56 @@ nav ul div.items a {
 } */
 
 .grid-section .box {
-    height: 50px;
-    width: 50px;
+    /* height: 50px;
+    width: 50px; */
     /* height: 65px;
     width: 65px; */
+    height: 15px;
+    width: 15px;
     border: 1px solid #d7ccc6;
+}
+
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        background-color: #e8e3df;
+    }
+    .grid-section {
+        width: 768px;
+        margin: auto;
+    }
+    .grid-section .box {
+        height: 32px;
+        width: 32px;
+        border: 1px solid #d7ccc6;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .wrapper {
+        background-color: #e8e3df;
+    }
+    .grid-section {
+        width: 1024px;
+        margin: auto;
+    }
+    .grid-section .box {
+        height: 45px;
+        width: 45px;
+        border: 1px solid #d7ccc6;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
+    .wrapper {
+        background-color: #e8e3df;
+    }
+    .grid-section {
+        width: 1300px;
+        margin: auto;
+    }
+    .grid-section .box {
+        height: 58px;
+        width: 58px;
+        border: 1px solid #d7ccc6;
+    }
 }
