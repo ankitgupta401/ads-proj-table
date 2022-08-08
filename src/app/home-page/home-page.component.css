@@ -154,7 +154,7 @@ nav ul div.items a {
 .grid-section .row {
     display: flex;
     justify-content: space-between;
-    margin-top: 4px;
+    margin-top: 2px;
 }
 
 .grid-section .box {
