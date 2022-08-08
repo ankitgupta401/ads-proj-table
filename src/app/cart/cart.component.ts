@@ -35,12 +35,19 @@ export class CartComponent implements OnInit,OnDestroy {
     this.blocksSub.unsubscribe()
   }
   checkout(form:any){
-    Swal.fire('Purchase Complete','Thank you for your purchase','success').then(()=>
+    if(!form.valid){
+      Swal.fire('Please Fill All Details','','error')
+      return;
+    }
+    this.commonService.checkout(form.value).subscribe((val: any) => {
+      Swal.fire('Purchase Complete','Thank you for your purchase','success').then(()=>
       {
         this.commonService.setBlocksInCart(0,0,0);
          this.router.navigate(['/'])
       })
     
+    })
+ 
   }
 
 }

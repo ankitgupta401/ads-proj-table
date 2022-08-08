@@ -1,14 +1,17 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Subject, Subscription } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CommonServiceService {
 
-  constructor() { 
+  constructor(private http:HttpClient) { 
     
   }
+  baseUrl = environment.baseUrl;
   typeOfBlock= new BehaviorSubject<number>(0);
   blocksInCart= new BehaviorSubject<number>(0);
   index= new BehaviorSubject<number>(0);
@@ -31,5 +34,9 @@ export class CommonServiceService {
   }
   getBlocksInCartValue(){
     return this.blocksInCart.getValue();
+  }
+
+  checkout(data:any){
+    return this.http.post(this.baseUrl + '/create-ad', data);
   }
 }
