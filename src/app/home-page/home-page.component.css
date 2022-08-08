@@ -144,8 +144,9 @@ nav ul div.items a {
 }
 
 .grid-section {
-    max-width: 94vw;
-    margin: auto;
+    /* max-width: 94vw; */
+    width: 100%;
+    /* margin: auto; */
     padding: 20px;
     /* margin: 30px; */
     /* background-image: radial-gradient(circle, #fdfcfc 3%, #e8e3df 60%); */
@@ -162,11 +163,24 @@ nav ul div.items a {
     width: 50px; */
     /* height: 65px;
     width: 65px; */
-    height: 4vw;
-    width: 4vw;
+    height: 4.5vw;
+    width: 4.5vw;
     border: 1px solid #d7ccc6;
 }
-
+@media only screen and (min-width: 320px) and (max-width:425px) {
+    .wrapper {
+        background-color: #e8e3df;
+    }
+    .grid-section {
+        width: 100%;
+        padding:20px;
+    }
+    .grid-section .box {
+        height: 4vw;
+        width: 4vw;
+        border: 1px solid #d7ccc6;
+    }
+}
 
 /* @media only screen and (min-width: 768px) {
     .wrapper {
