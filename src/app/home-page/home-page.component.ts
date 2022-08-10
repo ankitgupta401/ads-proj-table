@@ -65,7 +65,9 @@ export class HomePageComponent implements OnInit {
   .sort((a:any, b:any) => a.sort - b.sort)
   .map(( value: any) => value.value);
     console.log(this.images);
-
+    for(let i=0;i<20;i++){
+      this.rows.push(i)
+    }
     this.getLeadsNextPage()
   }
 
