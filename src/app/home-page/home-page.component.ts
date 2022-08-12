@@ -65,7 +65,7 @@ export class HomePageComponent implements OnInit {
     console.log(this.images);
  
     // this.shuffleImage();
-   
+    this.allArr = [];
     this.getLeadsNextPage()
   }
 
@@ -79,12 +79,13 @@ export class HomePageComponent implements OnInit {
   getLeadsNextPage(){
     this.loading =true;
     setTimeout(() => {
-      this.allArr = [];
+      
       let len =0;
       let tempArr =[];
       this.shuffleImage();
       let currRowSpan = 20
       let nextRowData =[]
+
       for(let i=0;i<this.images.length;i++){
    
         if((len+ this.images[i].wBlocks) > currRowSpan){
