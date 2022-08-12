@@ -10,31 +10,51 @@
     style="overflow: auto"
     class="grid-section">
    
-        <div  *ngFor="row of rows;let i=index"  [class]="'row row-' + i">
-            <div class="box">
-            </div>
-            <div class="box">
-            </div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-            <div class="box"></div>
-           
-             
+  
+          <div class="wrapper">
+            <table>
+              <!-- <col width=100 ><col width=100><col width=100><col width=100 ><col width=100><col width=100> -->
+                <tbody >
+               
+                    <tr *ngFor="let row of allArr;let i=index">
+                      <td *ngFor="let col of allArr[i];let j=index" [colSpan]="allArr[i][j].wBlocks"  [rowSpan]="allArr[i][j].hBlocks" class="box-95">
+                          <img  style="display:block;" width="100%" height="100%"  *ngIf="allArr[i][j].wBlocks > 0 && allArr[i][j]?.img" class="inner-box" [src]="allArr[i][j]?.img"/>
+                      </td>
+                     
+                  </tr>
+                  <tr></tr>
+                  <tr></tr>
+                  <tr></tr>
+                  <tr></tr>
+                  
+                  <tr>
+                  
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                    <td class="box-95"> </td>
+                  
+                </tr> 
+               
+                </tbody>
+            </table>
+        
         </div>
         
         <br/>
