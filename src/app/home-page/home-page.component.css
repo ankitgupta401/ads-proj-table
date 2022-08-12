@@ -38,3 +38,21 @@ table {
   text-indent: initial;
   border-spacing: 2px !important;
 }
+
+.my-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.my-grid > div {
+  width: 5vw;
+  height: 4.4vw;
+  border: 1px solid #d7ccc6;
+}
+
+.my-grid img {
+  object-fit: cover;
+
+  height: 100%;
+  width: 100%;
+}

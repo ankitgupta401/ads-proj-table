@@ -11,9 +11,9 @@
     class="grid-section">
    
   
-          <div class="wrapper">
-            <table>
-              <!-- <col width=100 ><col width=100><col width=100><col width=100 ><col width=100><col width=100> -->
+          <div class="my-grid">
+            <!-- <table>
+
                 <tbody >
                
                     <tr *ngFor="let row of allArr;let i=index">
@@ -53,8 +53,13 @@
                 </tr> 
                
                 </tbody>
-            </table>
-        
+            </table>  -->
+            <div  *ngFor="let image of images" [style.width]="image.wBlocks * 5 + 'vw'" [style.height]="10 + 'vw'" >
+              <img [src]="image.img" alt="">
+            </div>
+          
+            <!-- <div  style="background-color: red; "></div> -->
+
         </div>
         
         <br/>
