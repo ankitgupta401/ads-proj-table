@@ -89,17 +89,19 @@ export class HomePageComponent implements OnInit {
       this.shuffleImage();
       let currRowSpan = 20
       let nextRowData =[]
-
+      let count = 0;
       for(let i=0;i<this.images.length;i++){
-   
+     
         if((len+ this.images[i].wBlocks) > currRowSpan){
           let rem = currRowSpan - len;
           if(rem > 0){
+            for(let i = 0;i<rem;i++){
             tempArr.push({
               hBlocks: 1,
-              wBlocks: rem,
+              wBlocks: 1,
               // img: `https://picsum.photos/100/${rem}?random&t=${Math.random()}`
             });
+          }
           }
       
           this.allArr.push(tempArr);
@@ -135,6 +137,8 @@ export class HomePageComponent implements OnInit {
          
         }
       }
+
+      // this.allArr.length =10;
       // console.log(this.allArr);
       this.loading =false;
     },1500)
