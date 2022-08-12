@@ -12,7 +12,7 @@
    
   
           <div class="my-grid">
-            <!-- <table>
+             <table>
 
                 <tbody >
                
@@ -53,14 +53,12 @@
                 </tr> 
                
                 </tbody>
-            </table>  -->
-            <div  *ngFor="let image of images" [style.width]="image.wBlocks * 5 + 'vw'" [style.height]="10 + 'vw'" >
+            </table>  
+            <!-- <div  *ngFor="let image of images" [style.width]="image.wBlocks * 5 + 'vw'" [style.height]="10 + 'vw'" >
               <img [src]="image.img" alt="">
             </div>
-          
-            <!-- <div  style="background-color: red; "></div> -->
-
-        </div>
+      
+        </div> -->
         
         <br/>
         <div class="d-flex justify-content-center" *ngIf="loading">
